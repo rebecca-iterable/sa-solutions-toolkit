@@ -1,12 +1,12 @@
 ---
 description: Auto-generate Guru card drafts from solutions docs when Guru MCP is connected
 alwaysApply: false
-globs: docs/**/*.md,**/input-solution-doc.md,**/output-guru-card.md
+globs: .cursor/skills/guru-card-generator/docs/**/*.md,**/input-solution-doc.md,**/output-guru-card.md
 ---
 
 # Guru card auto-draft
 
-When the user provides a **solutions doc** (uploaded file, pasted content, PDF, or markdown in `docs/`) and asks to generalize or create a Guru card:
+When the user provides a **solutions doc** (uploaded file, pasted content, PDF, or markdown) and asks to generalize or create a Guru card:
 
 1. Run the **guru-card-generator** skill end-to-end
 2. If **Guru MCP** (`user-Guru`) is connected, **always** create a draft via `guru_create_draft` unless the user says not to

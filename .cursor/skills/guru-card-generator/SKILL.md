@@ -155,23 +155,7 @@ Follow [guru-template.md](guru-template.md). **Use the Guru template's exact sec
 - [ ] Example setup included only when source has UI walkthrough content
 - [ ] Card targets **Customer Solutions Knowledge Base** collection
 
-### 7. Optional — solutions library YAML
-
-If the user wants to save to `data/solutions/`:
-
-```yaml
-title: "<from card title>"
-use_case: "<one line>"
-problem: "<one line>"
-architecture: "<data flow summary>"
-iterable_components: "<comma-separated, from doc>"
-integrations: "<partners/tools>"
-demo_url: ""
-guru_card_path: ""
-tags: "<relevant tags from doc>"
-```
-
-### 8. Create Guru draft via MCP (default when connected)
+### 7. Create Guru draft via MCP (default when connected)
 
 When **Guru MCP** (`user-Guru`) is available, create a draft after steps 1–6 unless the user opts out.
 
@@ -228,6 +212,6 @@ The [statsig-journey-live-data](examples/statsig-journey-live-data/) example sho
 - Team template: [guru-template.md](guru-template.md)
 - Examples index: [examples/README.md](examples/README.md)
 - Statsig reference: [examples/statsig-journey-live-data/](examples/statsig-journey-live-data/)
-- Solutions doc input format: [docs/solution-template.md](../../../docs/solution-template.md)
+- Solutions doc input format: [docs/solution-template.md](docs/solution-template.md)
 - Border script: [scripts/add-image-borders.py](scripts/add-image-borders.py)
 - Guru MCP config: [guru-config.md](guru-config.md)

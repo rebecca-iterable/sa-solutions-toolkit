@@ -92,6 +92,7 @@ your-project/
             ├── SKILL.md
             ├── guru-template.md
             ├── guru-config.md
+            ├── docs/solution-template.md
             ├── scripts/
             └── examples/
 ```
@@ -179,7 +180,7 @@ If the doc has UI walkthrough steps but no screenshots, Cursor will ask you to u
 
 ### Writing new solution docs
 
-Use [docs/solution-template.md](../../../docs/solution-template.md) as the input structure — it maps cleanly to the Guru card template.
+Use [docs/solution-template.md](docs/solution-template.md) as the input structure — it maps cleanly to the Guru card template.
 
 ## What you get after a run
 

@@ -6,7 +6,7 @@ Use this structure when documenting a customer solution (before generalizing).
 <!-- e.g. Real-time cart abandonment via event trigger -->
 
 ## Customer context
-<!-- Industry, size, goals — this section gets anonymized for Guru/library -->
+<!-- Industry, size, goals — this section gets anonymized for Guru -->
 
 ## Problem
 <!-- What business problem were they solving? -->
