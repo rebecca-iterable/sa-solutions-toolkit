@@ -1,0 +1,9 @@
+flowchart LR
+    A[User enters journey] --> B[Live Data tile]
+    B --> C[Journey Webhook]
+    C -->|POST get_config| D[Statsig API]
+    D -->|group_name, group, name| C
+    C --> B
+    B --> E{Branch on group_name}
+    E -->|Control| F[Message tile — control variant]
+    E -->|Test| G[Message tile — test variant]

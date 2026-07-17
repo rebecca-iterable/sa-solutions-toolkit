@@ -1,0 +1,39 @@
+---
+description: Auto-generate Guru card drafts from solutions docs when Guru MCP is connected
+alwaysApply: false
+globs: docs/**/*.md,**/input-solution-doc.md,**/output-guru-card.md
+---
+
+# Guru card auto-draft
+
+When the user provides a **solutions doc** (uploaded file, pasted content, PDF, or markdown in `docs/`) and asks to generalize or create a Guru card:
+
+1. Run the **guru-card-generator** skill end-to-end
+2. If **Guru MCP** (`user-Guru`) is connected, **always** create a draft via `guru_create_draft` unless the user says not to
+3. Follow [guru-config.md](../skills/guru-card-generator/guru-config.md) for collection, title prefix, and post-draft steps
+
+## Input sources
+
+| Source | How to read |
+|--------|-------------|
+| Uploaded PDF / image | Read file directly |
+| Pasted markdown/text | Use pasted content |
+| Local `.md` file | Read file |
+| Google Doc **link only** | Cannot fetch directly — ask user to export (PDF/DOCX), paste content, or upload screenshots |
+| Google Doc **export** | Read downloaded PDF/DOCX |
+
+## MCP draft workflow
+
+1. `guru_search_documents` — check for duplicate cards (agentId in guru-config.md)
+2. Generate generalized card per skill (Purpose, Problem, etc.)
+3. Save local copy to `examples/<pattern-slug>/output-guru-card.md`
+4. `guru_create_draft` with:
+   - `title`: `WIP: {card title}`
+   - `content`: card body (markdown sections; user may restyle in Guru)
+5. Return draft link/ID and manual follow-up checklist (collection, images, publish)
+
+## Do not skip
+
+- Anonymization and product-accuracy checks from the skill
+- Screenshot borders (`scripts/add-image-borders.py`) when UI walkthrough content exists
+- Redact secrets in screenshots before border step
